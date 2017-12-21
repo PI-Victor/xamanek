@@ -1,6 +1,0 @@
-[package]
-name = "xamanek"
-version = "0.1.0"
-authors = ["Victor Palade <victor@cloudflavor.io>"]
-
-[dependencies]
