@@ -5,5 +5,7 @@ package runtime
 type ContainerRuntimeClient interface{}
 
 type ContainerRuntimeInterface interface {
-	CreateNewContainer() (*ContainerRuntimeClient, error)
+	CreateContainer() (*ContainerRuntimeClient, error)
+	DestroyContainer() error
+	ScaleContainers() error
 }
