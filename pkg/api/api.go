@@ -1,9 +1,5 @@
 package api
 
-type Node struct {
-	IPAddr string
-}
-
 type Namespace struct {
 	Name      string
 	Resources []*Resource

@@ -10,17 +10,18 @@ type Config struct {
 	LogLevel         logrus.Level `json:"logLevel"`
 	ContainerRuntime string       `json:"containerRuntime"`
 	IsMaster         bool         `json:"isMaster"`
+	MasterURI        string       `json:"masterURI,omitempty"`
 }
 
 func NewConfig() *Config {
 	return &Config{}
 }
 
-type Instance struct {
+type Server struct {
 	Services []services.Service
 }
 
-func (i *Instance) Start() error {
+func (i *Server) Start() error {
 	for _, service := range i.Services {
 		service.Start()
 		logrus.Info(service)
@@ -28,11 +29,6 @@ func (i *Instance) Start() error {
 	return nil
 }
 
-func NewInstance(config *Config) *Instance {
-	consulService := services.NewConsulService()
-
-	s := append([]services.Service{}, consulService)
-	return &Instance{
-		Services: s,
-	}
+func NewInstance(config *Config) *Server {
+	return nil
 }

@@ -1,11 +1,10 @@
 // Package runtime abstract away the implementation of the current container
 // runtime to make it possible to swap them.
-package runtime
+package cri
 
 type ContainerRuntimeClient interface{}
 
 type ContainerRuntimeInterface interface {
-	CreateContainer() (*ContainerRuntimeClient, error)
+	CreateContainer() error
 	DestroyContainer() error
-	ScaleContainers() error
 }
