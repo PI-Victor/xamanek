@@ -4,6 +4,10 @@ import (
 	"github.com/cloudflavor/xamanek/pkg/core"
 )
 
-type APIGateway struct {
+type Resource struct {
 	Nodes []*core.Node
+}
+
+type APIGateway struct {
+	Resources []*Resource
 }
